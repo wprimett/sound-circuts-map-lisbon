@@ -27,7 +27,9 @@ body {
 }
 
 button {
-  background-color: #6495ED;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  background-color: #F2003C;
   color: white;
   padding: 16px 25px;
   margin: 0 auto;
@@ -38,5 +40,7 @@ button {
 }
 
 p {
-  color: #CCC;
+  text-align: center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #222;
 }
