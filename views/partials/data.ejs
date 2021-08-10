@@ -17,7 +17,7 @@
     const longitude = position.coords.longitude;
 
     status.textContent = '';
-    mapLink.innerHTML = 'Latitude: ${latitude} °, Longitude: ${longitude} ° </br>'
+    mapLink.innerHTML = `Latitude: ${latitude} °, Longitude: ${longitude} ° </br>`
     mapLink.innerHTML += `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>openstreetmap</a>`;
   }
 
