@@ -41,8 +41,9 @@
     const longitude = position.coords.longitude;
 
     status.textContent = '';
-    mapLink.innerHTML = `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>device permissions</a>`;
-    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    mapLink.innerHTML = 'Unable to retrieve your location </br>'
+    mapLink.innerHTML += `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>device permissions</a>`;
+    // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     console.log(longitude);
   }
 
