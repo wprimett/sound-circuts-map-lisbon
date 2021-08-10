@@ -25,7 +25,7 @@
   <body>
   <button type="button" id = "find-me" style="width: auto;">Show my location</button><br/>
   <p id = "status"</p>
-  <a id = "map-link"</a>
+  <p id = "map-link"</p>
 
   <script language="JavaScript">
   function geoFindMe() {
@@ -41,7 +41,7 @@
     const longitude = position.coords.longitude;
 
     status.textContent = '';
-    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    mapLink.innerHTML = `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>device permissions</a>`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     console.log(longitude);
   }
