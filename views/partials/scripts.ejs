@@ -1,6 +1,10 @@
 <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
 <script>
   var lng = -9.138307571411133;
   var lat = 38.7134426585726;
@@ -33,4 +37,7 @@
   map.on('locationerror', onLocationError);
 
   map.locate({setView: true, maxZoom: 16});
+
+  // or, add to an existing map:
+  map.addControl(new L.Control.Fullscreen());
 </script>
