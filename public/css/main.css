@@ -1,10 +1,42 @@
-body {
+/* body {
   padding-top: 50px;
-}
+} */
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 #headshot {
     width: 500px;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  background-color: #6495ED;
+  color: white;
+  padding: 16px 25px;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+}
+
+p {
+  color: #CCC;
 }

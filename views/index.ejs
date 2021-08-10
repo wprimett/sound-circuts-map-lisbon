@@ -14,7 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-    body {background-color: #333;text-align: center;}
+
     </style>
 
     <!-- Custom styles for this template -->
@@ -22,8 +22,8 @@
 
   </head>
   <body>
-  <button id = "find-me">Show my location</button><br/>
-  <p id = "status" style="width:50%;"></p>
+  <button type="button" id = "find-me" style="width: auto;">Show my location</button><br/>
+  <p id = "status"</p>
   <a id = "map-link" target="_blank"></a>
 
   <script language="JavaScript">
@@ -45,10 +45,10 @@
   }
 
   function error() {
-    status.textContent = `Unable to retrieve your location,
-    please enable permissions in your settings:
-    https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DAndroid`;
-    mapLink.href = `https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DAndroid`;
+    status.textContent = `Unable to retrieve your location,`;
+    // please enable permissions in your settings:
+    // https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DAndroid`;
+    // mapLink.href = `https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DAndroid`;
   }
 
   if(!navigator.geolocation) {
@@ -60,6 +60,8 @@
 }
 
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
+document.querySelector('#testjs').addEventListener('click', geoFindMe);
+
 </script>
 
 <!-- <a href="javascript:void(take_snapshot())">Take Snapshot</a> -->
