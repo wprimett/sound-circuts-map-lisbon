@@ -2,9 +2,23 @@
 <p id = "status"</p>
 <p id = "map-link"</p>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
 
 <script language="JavaScript">
+
+  var lng = -9.138307571411133;
+  var lat = 38.7134426585726;
+  var zoom = 12;
+
+  var map = L.map('map', {
+    'center': [lat,lng],
+    'zoom': zoom,
+    'layers': [
+      L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+              attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+      })
+    ]
+  });
 
   function geoFindMe() {
 
