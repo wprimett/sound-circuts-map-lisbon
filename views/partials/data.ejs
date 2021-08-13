@@ -1,14 +1,13 @@
-<button type="button" id = "find-me" style="width: auto;">Show my location</button><br/>
+<button type="button" id = "find-me" style="width: auto;">Update my location</button><br/>
 <p id = "status"</p>
 <p id = "map-link"</p>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
 
 <script language="JavaScript">
 
   // Manual Geolocation tracking enabled
 
   function geoFindMe() {
+  userUpdateLocation(-9.138307571411133, 38.7134426585726);
 
   const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');

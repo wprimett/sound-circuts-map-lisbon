@@ -6,21 +6,25 @@
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 
 <script>
-  var lng = -9.138307571411133;
-  var lat = 38.7134426585726;
-  var zoom = 12;
+  // var lng = -9.138307571411133;
+  // var lat = 38.7134426585726;
+  // var zoom = 12;
+  function generate_map(){
+    var map = L.map('map', {
+      'center': [lat,lng],
+      'zoom': zoom,
+      'layers': [
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        })
+      ]
+    });
+    return map;
+  }
 
-  var map = L.map('map', {
-    'center': [lat,lng],
-    'zoom': zoom,
-    'layers': [
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      })
-    ]
-  });
+  map = generate_map();
 
-  var greenIcon = new L.Icon({
+  var yellowPinIcon = new L.Icon({
     iconUrl: 'img/marker-icon-2x-gold-75.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
     iconSize: [25, 41],
@@ -29,7 +33,12 @@
     shadowSize: [41, 41]
   });
 
-L.marker([lat, lng], {icon: greenIcon}).addTo(map);
+  function userUpdateLocation(user_lat, user_lat){
+    console.log("updated");
+    map.remove();
+    map = generate_map();
+    L.marker([lat, lng], {icon: yellowPinIcon}).addTo(map);
+  }
 
   // function onLocationFound(e) {
   //   var radius = e.accuracy / 2;
