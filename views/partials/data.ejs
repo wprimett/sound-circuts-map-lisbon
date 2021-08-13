@@ -7,8 +7,6 @@
   // Manual Geolocation tracking enabled
 
   function geoFindMe() {
-  userUpdateLocation(-9.138307571411133, 38.7134426585726);
-
   const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
 
@@ -18,6 +16,8 @@
   function success(position) {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
+
+    userUpdateLocation(latitude, longitude);
 
     status.textContent = '';
     mapLink.innerHTML = `Latitude: ${latitude} °, Longitude: ${longitude} ° </br>`
