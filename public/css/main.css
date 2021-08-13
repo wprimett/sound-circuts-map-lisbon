@@ -44,3 +44,35 @@ p {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #222;
 }
+
+.container-fluid{
+  border-color: white;
+  background-color: #FFFF00;
+  box-shadow: 5px 5px #333;
+
+}
+
+
+.navbar-brand{
+  padding-left: 25px;
+}
+
+.leaflet-popup-content-wrapper,.leaflet-popup-content
+{
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+   border-radius: 0 !important;
+}
+
+.navbar-header, ul{
+  font-family: monospace;
+}
+
+.center-img {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 2.5%;
+}
