@@ -83,11 +83,11 @@ ul.list li{
 
 .center-img {
   display: block;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 10px;
+  margin-right: 0px;
   margin-top: 10px;
   margin-bottom: 0px;
-  width: 2.5%;
+  width: 5%;
 }
 
 #find-me{
