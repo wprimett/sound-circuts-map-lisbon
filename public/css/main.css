@@ -49,7 +49,7 @@ p {
   border-color: white;
   background-color: #FFFF00;
   box-shadow: 5px 5px #333;
-
+  opacity: 0.75;
 }
 
 
@@ -64,6 +64,10 @@ p {
    border-radius: 0 !important;
 }
 
+.navbar-default .navbar-brand {
+  color: #1e1e1e;
+}
+
 .navbar-header, ul{
   font-family: monospace;
 }
@@ -75,4 +79,13 @@ p {
   margin-top: 10px;
   margin-bottom: 0px;
   width: 2.5%;
+}
+
+#find-me{
+  border-radius: 0;
+  color: #1e1e1e;
+  border-color: white;
+  background-color: #FFFF00;
+  box-shadow: 3px 3px #aaa;
+  opacity: 0.75;
 }
