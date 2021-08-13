@@ -6,20 +6,6 @@
 
 <script language="JavaScript">
 
-  var lng = -9.138307571411133;
-  var lat = 38.7134426585726;
-  var zoom = 12;
-
-  var map = L.map('map', {
-    'center': [lat,lng],
-    'zoom': zoom,
-    'layers': [
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      })
-    ]
-  });
-
   function geoFindMe() {
 
   const status = document.querySelector('#status');
