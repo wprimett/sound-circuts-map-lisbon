@@ -33,11 +33,11 @@
     shadowSize: [41, 41]
   });
 
-  function userUpdateLocation(user_lat, user_lat){
+  function userUpdateLocation(user_lat, user_lng){
     console.log("updated");
     map.remove();
     map = generate_map();
-    L.marker([user_lat, user_lat], {icon: yellowPinIcon}).addTo(map)
+    L.marker([user_lat, user_lng], {icon: yellowPinIcon}).addTo(map)
       .bindPopup("You are here").openPopup();
 ;
   }
