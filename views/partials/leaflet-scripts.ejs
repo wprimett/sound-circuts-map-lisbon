@@ -37,7 +37,9 @@
     console.log("updated");
     map.remove();
     map = generate_map();
-    L.marker([lat, lng], {icon: yellowPinIcon}).addTo(map);
+    L.marker([user_lat, user_lat], {icon: yellowPinIcon}).addTo(map)
+      .bindPopup("You are here").openPopup();
+;
   }
 
   // function onLocationFound(e) {
