@@ -7,8 +7,40 @@
 
 <script src="js/L.Mask.js"></script>
 
+<script src="/js/leaflet.ajax.min.js"></script>
+
+<!-- <script src="/data/sound_circuts_programme.js"></script> -->
 
 <script>
+
+  Polygons = []
+  Points = []
+
+  // for (i = 0; i < sc_json.features.length; i++){
+  //   feature_json = sc_json["features"][i];
+  //   feature_type = feature_json["geometry"]["type"];
+  //   if (feature_type === "Polygon"){
+  //     Polygons.push(feature_json)
+  //   }else if (feature_type === "Point"){
+  //     Points.push(feature_json)
+  //   }
+  // }
+
+  // for (i = 0; i < Polygons.length; i++){
+  //   ply_json = Polygons[i];
+  //   console.log(ply_json.geometry.coordinates)
+  //
+  //   ply_obj = L.geoJSON(ply_json);
+  //   for (j = 0; j < Points.length; j++){
+  //     pnt_json = Points[j];
+  //     console.log(pnt_json.geometry.coordinates)
+  //     pnt_obj = L.geoJSON(pnt_json)
+  //
+  //     if (inside(pnt_json.geometry.coordinates,ply_json.geometry.coordinates)){
+  //       console.log("asdas")
+  //     }
+  //   }
+  // }
 
   function generate_map(){
     var map = L.map('map', {
@@ -77,9 +109,8 @@
     latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
   }
 
-
   var mask = L.mask(latLngs)
-  mask.addTo(map);
+  // mask.addTo(map);
 
   var options = {
     style: function (feature) {
@@ -94,7 +125,7 @@
   };
 
   function updateMask(){
-    layerpoly[0] = new L.geoJson(location_bounds[0].features,options)
+    layerpoly[0] = new L.geoJson(location_bounds[0].features[0].options)
     layerpoly[0].addTo(map);
 
     // for (i=0; i<location_bounds.length; i++) {
