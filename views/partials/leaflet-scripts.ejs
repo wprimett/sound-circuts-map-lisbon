@@ -42,16 +42,23 @@
   //   }
   // }
 
+// var map_url = 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png'
+  var map_url_global = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+  var map_url_install = 'https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png'
+  var cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
+
   function generate_map(lat,lng,zoom){
     var map = L.map('map', {
       'center': [lat,lng],
       'zoom': zoom,
       'layers': [
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        })
+      L.tileLayer(map_url_install, {
+        attribution: cartodbAttribution
+      })
       ]
     });
+    // or, add to an existing map:
+    map.addControl(new L.Control.Fullscreen());
     return map;
   }
 
@@ -72,8 +79,8 @@
     map.remove();
     map = generate_map(user_lat, user_lng, zoom);
     L.marker([user_lat, user_lng], {icon: yellowPinIcon}).addTo(map)
-      .bindPopup("You are here").openPopup();
-;
+    .bindPopup("You are here").openPopup();
+    ;
   }
 
   // function onLocationFound(e) {
@@ -94,13 +101,11 @@
   //
   // map.locate({setView: true, maxZoom: 16});
 
-  // or, add to an existing map:
-  map.addControl(new L.Control.Fullscreen());
-
   // mask.ejs
   var latLngs = [];
-  var layerpoly = []
+  var layerpoly = [];
   var mask_coordinates = [];
+  // var coordinates;
   var active_area_id = 0;
 
   for (i=0; i<location_bounds.length; i++) {
@@ -111,7 +116,7 @@
   }
 
   var mask = L.mask(latLngs)
-  // mask.addTo(map);
+  mask.addTo(map);
 
   var options = {
     style: function (feature) {
@@ -124,30 +129,33 @@
       };
     }
   };
+  console.log(coordinates)
 
   function updateMask(){
-    layerpoly[0] = new L.geoJson(location_bounds[0].features[0].options)
-    layerpoly[0].addTo(map);
 
-    // for (i=0; i<location_bounds.length; i++) {
-    //     layerpoly[i].push(new L.geoJson(location_bounds[i].features,options));
-    //     layerpoly[i].addTo(map);
-    //   }
-      layerpoly[0].on('mouseover', function(e) {
+    for (i=0; i<location_bounds.length; i++) {
+        var lpoly = new L.geoJson(location_bounds[i].features, options)
+        layerpoly.push(lpoly);
+        lpoly.addTo(map);
+      }
+    layerpoly[0].on('mouseover', function(e) {
       //open popup;
       active_area = 0;
       var popup = L.popup()
-       .setLatLng(e.latlng)
-       .setContent('Sound Circut')
-       .openOn(map);
+      .setLatLng(e.latlng)
+      .setContent('Sound Circut')
+      .openOn(map);
       map.removeLayer(mask)
       latLngs = []
-      for (i=0; i<coordinates.length; i++) {
-          latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
+      for (i=0; i<mask_coordinates[0].length; i++) {
+        var coordinates = mask_coordinates[0];
+        latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
       }
+      // map.remove();
+      // map = generate_map(lat, lng, zoom);
       mask = L.mask(latLngs)
       mask.addTo(map);
-      updateView();
+      updateMask();
     });
   }
 
