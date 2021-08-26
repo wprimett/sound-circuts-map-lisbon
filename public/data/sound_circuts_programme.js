@@ -1,4 +1,4 @@
-{
+var sc_json = {
   "type": "FeatureCollection",
   "features": [
     {
