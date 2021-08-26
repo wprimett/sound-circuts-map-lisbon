@@ -70,7 +70,7 @@
     console.log("updated");
     zoom = 14;
     map.remove();
-    map = generate_map(user_lat, user_lng);
+    map = generate_map(user_lat, user_lng, zoom);
     L.marker([user_lat, user_lng], {icon: yellowPinIcon}).addTo(map)
       .bindPopup("You are here").openPopup();
 ;
