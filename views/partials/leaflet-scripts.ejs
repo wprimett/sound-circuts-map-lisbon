@@ -42,7 +42,7 @@
   //   }
   // }
 
-  function generate_map(){
+  function generate_map(lat,lng,zoom){
     var map = L.map('map', {
       'center': [lat,lng],
       'zoom': zoom,
@@ -55,7 +55,7 @@
     return map;
   }
 
-  map = generate_map();
+  map = generate_map(lat,lng,zoom);
 
   var yellowPinIcon = new L.Icon({
     iconUrl: 'img/marker-icon-2x-gold-75.png',

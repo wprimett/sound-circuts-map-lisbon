@@ -22,6 +22,10 @@
     status.textContent = '';
     mapLink.innerHTML = `Latitude: ${latitude} °, Longitude: ${longitude} ° </br>`
     mapLink.innerHTML += `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>openstreetmap</a>`;
+    lng = longitude;
+    lat = latitude;
+    zoom = 14;
+    generate_map(lat,lng,zoom);
   }
 
   function error() {
