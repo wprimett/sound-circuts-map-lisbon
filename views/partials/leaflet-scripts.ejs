@@ -105,7 +105,7 @@
 
   // mask.ejs
   var latLngs = [];
-  var sc_areas = [];
+  // var sc_areas = [];
   var mask_coordinates = [];
   // var coordinates;
   var active_area_id = 0;
@@ -127,44 +127,61 @@
         "color": "yellow",
         "weight": 2,
         "opacity": 0.4,
-        "fillColor": "transparent",
-        "fillOpacity": 0.
+        "fillColor": "yellow",
+        "fillOpacity": 0.9
       };
     }
   };
 
-  // function updateMask(){
-  //
-  //   for (i=0; i<Polygons.length; i++) {
-  //       var lpoly = new L.geoJson(Polygons[i], options);
-  //       // console.log(lpoly)
-  //       sc_areas.push(lpoly);
-  //       lpoly.addTo(map);
-  //     }
-  //   sc_areas[2].on('mouseover', function(e) {
-  //     //open popup;
-  //     active_area_id = 0;
-  //     var popup = L.popup()
-  //     .setLatLng(e.latlng)
-  //     .setContent('Sound Circut')
-  //     .openOn(map);
-  //     map.removeLayer(mask)
-  //     var latLngs = []
-  //     var coordinates = Polygons[2].geometry.coordinates[0];
-  //     for (i=0; i<coordinates.length; i++) {
-  //       latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
-  //     }
-  //     mask = L.mask(latLngs)
-  //     mask.addTo(map);
-  //     updateMask();
-  //   });
-  // }
+  var coordinates = Polygons[0].geometry.coordinates[0];
+  var coordinates1 = Polygons[1].geometry.coordinates[0];
+  var coordinates2 = Polygons[2].geometry.coordinates[0];
+  var coordinates3 = Polygons[3].geometry.coordinates[0];
+  var coordinates4 = Polygons[4].geometry.coordinates[0];
 
-var coordinates = Polygons[0].geometry.coordinates[0];
-var coordinates1 = Polygons[1].geometry.coordinates[0];
-var coordinates2 = Polygons[2].geometry.coordinates[0];
-var coordinates3 = Polygons[3].geometry.coordinates[0];
-var coordinates4 = Polygons[4].geometry.coordinates[0];
+  function updateMask(){
+    sc_areas = [];
+    for (i=0; i<Polygons.length; i++) {
+        var lpoly = new L.geoJson(Polygons[i], options);
+        // console.log(lpoly)
+        sc_areas.push(lpoly);
+        lpoly.addTo(map);
+      }
+    sc_areas[2].on('click', function(e) {
+      //open popup;
+      active_area_id = 0;
+      var popup = L.popup()
+      .setLatLng(e.latlng)
+      .setContent('Sound Circut')
+      .openOn(map);
+      map.removeLayer(mask)
+      var latLngs = []
+      // var coordinates = Polygons[2].geometry.coordinates[0];
+      for (i=0; i<coordinates2.length; i++) {
+        latLngs.push(new L.LatLng(coordinates2[i][1], coordinates2[i][0]));
+      }
+      mask = L.mask(latLngs)
+      mask.addTo(map);
+      updateMask();
+    });
+      sc_areas[1].on('click', function(e) {
+      //open popup;
+      active_area_id = 0;
+      var popup = L.popup()
+      .setLatLng(e.latlng)
+      .setContent('Sound Circut')
+      .openOn(map);
+      map.removeLayer(mask)
+      var latLngs = []
+      // var coordinates = Polygons[2].geometry.coordinates[0];
+      for (i=0; i<coordinates1.length; i++) {
+        latLngs.push(new L.LatLng(coordinates1[i][1], coordinates1[i][0]));
+      }
+      mask = L.mask(latLngs)
+      mask.addTo(map);
+      updateView();
+    });
+  }
 
 function updateView(){
   layerpoly = new L.geoJson(Polygons[0],options)
@@ -172,18 +189,28 @@ function updateView(){
    layerpoly3 = new L.geoJson(Polygons[2],options)
    layerpoly4 = new L.geoJson(Polygons[3],options)
    layerpoly5 = new L.geoJson(Polygons[4],options)
+   layerpoly6 = new L.geoJson(Polygons[5],options)
+    layerpoly7 = new L.geoJson(Polygons[6],options)
+    layerpoly8 = new L.geoJson(Polygons[7],options)
+    layerpoly9 = new L.geoJson(Polygons[8],options)
   layerpoly.addTo(map);
   layerpoly2.addTo(map);
   layerpoly3.addTo(map);
   layerpoly4.addTo(map);
   layerpoly5.addTo(map);
+  layerpoly6.addTo(map);
+  layerpoly7.addTo(map);
+  layerpoly8.addTo(map);
+  layerpoly9.addTo(map);
 
-  layerpoly.on('mouseover', function(e) {
+
+  layerpoly.on('click', function(e) {
   //open popup;
   active_area = 0;
   var popup = L.popup()
    .setLatLng(e.latlng)
-   .setContent('Sound Circut')
+   .setContent('Artwork, Artist Name' + '<br><a href="https://eufonia.io/william-phoenix-primett">More Info</a>"')
+   // .setContent('Sound Circut link')
    .openOn(map);
   map.removeLayer(mask)
   latLngs = []
@@ -192,10 +219,11 @@ function updateView(){
   }
   mask = L.mask(latLngs)
   mask.addTo(map);
+
   updateView();
 });
 
-layerpoly2.on('mouseover', function(e) {
+layerpoly2.on('click', function(e) {
   //open popup;
   active_area = 1;
   var popup = L.popup()
@@ -212,7 +240,7 @@ layerpoly2.on('mouseover', function(e) {
   updateView();
 });
 
-layerpoly3.on('mouseover', function(e) {
+layerpoly3.on('click', function(e) {
   //open popup;
   active_area = 2;
   var popup = L.popup()
@@ -229,7 +257,7 @@ layerpoly3.on('mouseover', function(e) {
   updateView();
 });
 
-layerpoly4.on('mouseover', function(e) {
+layerpoly4.on('click', function(e) {
   //open popup;
   active_area = 3;
   var popup = L.popup()
@@ -246,7 +274,7 @@ layerpoly4.on('mouseover', function(e) {
   updateView();
 });
 
-layerpoly5.on('mouseover', function(e) {
+layerpoly5.on('click', function(e) {
   //open popup;
   active_area = 3;
   var popup = L.popup()

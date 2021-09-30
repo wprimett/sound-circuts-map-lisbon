@@ -4,40 +4,176 @@ var sc_json = {
     {
       "type": "Feature",
       "properties": {
-        "Title": "Installation 1",
-        "Artist Name": "Artist 1"
+        "Artwork": "Antisocial Distancing Ensemble",
+        "Artist Name": "William Phoenix Primett",
+        "Website": "https://eufonia.io/william-phoenix-primett",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632743993068-D5JGZZXD635Z3H1DEHM4/William+Phoenix+Primett1.JPG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.135275,
+          38.713273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "rain under the ceiling",
+        "Artist Name": "Sofia Balbontin",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632744802819-DDIB3LAWGFKY8LG5I9UH/Sofia+Balbontin2+%281%29.jpg",
+        "Website": "https://eufonia.io/sofia-balbontin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.135821203116866,
+          38.72491057601368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "Acousmatic Lisbon",
+        "Artist Name": "Jaime Reis, Mariana Vieira and Marta Domingues",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632659278859-BGZ8W4VSM6VKER01WAG1/Jaime+Reis+by+Sofia+Nunes.jpeg",
+        "Website": "https://eufonia.io/jaime-reis-mariana-vieira-e-marta-domingues"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.13515329360962,
+          38.719089036455614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "sub sacellum",
+        "Artist Name": "Júlia Lema Barros",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632741785686-SKHBFJWD95WUAM0LUQNS/julia+lema+barros+%282%29+%281%29.jpg",
+        "Website": "https://eufonia.io/julia-lema-barros"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.14894595541831,
+          38.71628329244273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "HearHere/EscuteAqui",
+        "Artist Name": "Mark Waldron-Hyden",
+        "Website": "https://eufonia.io/mark-waldronhyden",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632742861778-SI935A0KY191KUQH1NIO/_Mark+Waldron-Hyden2.jpg?format=500w"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.139337539672852,
+          38.713660318172415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "Torção do espaço",
+        "Artist Name": "Adriana Sá & John Klima",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632740584662-V9G3Y6ADS39I8UPUTS4I/adriana%26john1+%281%29.jpeg",
+        "Website": "https://eufonia.io/adrianasa-johnklima"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.137242097845396,
+          38.72304370079844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "Chen",
+        "Artist Name": "Diogo Evangelista",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632745230257-FLZTH32OCBV0MQJPRNNS/Diogo+Evanglelista+%281%29.jpg",
+        "Website": "https://eufonia.io/diogo-evangelista"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.135399299362787,
+          38.71650644031564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "Portal",
+        "Artist Name": "Alysse Miserendino",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632745794416-65CXOOEGMI7R8XUYQHTA/Alyssa+Miserendino2.jpeg",
+        "Website": "https://eufonia.io/alyssa-miserendino"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.132202863693236,
+          38.71562864243645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "- undersound",
+        "Artist Name": "Pedro Castanheira",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632746489198-W2W6WT4VA5VFIPXKW5T1/PedroCastanheira2+%281%29.jpeg",
+        "Website": "https://eufonia.io/pedro-castanheira"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.14074033498764,
+          38.705589726680536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artist Name": "",
+        "Picture": ""
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -9.13587212562561,
-              38.71714278163254
+              -9.135410785675049,
+              38.71308268162621
             ],
             [
-              -9.13638710975647,
-              38.71655680205799
+              -9.135121107101439,
+              38.713099424780175
             ],
             [
-              -9.136762619018553,
-              38.71575316511502
+              -9.1351318359375,
+              38.713425915499016
             ],
             [
-              -9.136204719543457,
-              38.715476912829025
+              -9.135410785675049,
+              38.71341754396076
             ],
             [
-              -9.13562536239624,
-              38.71613824227769
-            ],
-            [
-              -9.135475158691406,
-              38.71689164811741
-            ],
-            [
-              -9.13587212562561,
-              38.71714278163254
+              -9.135410785675049,
+              38.71308268162621
             ]
           ]
         ]
@@ -45,53 +181,30 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {
-        "Title": "Installation 2",
-        "Artist Name": "Artist 2"
-      },
+      "properties": {},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -9.135105013847351,
-              38.71642704878823
+              -9.135807752609253,
+              38.72477681933164
             ],
             [
-              -9.135062098503113,
-              38.71624706805637
+              -9.135668277740479,
+              38.724810300156854
             ],
             [
-              -9.134911894798279,
-              38.71618846958073
+              -9.135764837265015,
+              38.72518695835981
             ],
             [
-              -9.134606122970581,
-              38.716058715642326
+              -9.135947227478027,
+              38.725178588199114
             ],
             [
-              -9.1343754529953,
-              38.71602941633331
-            ],
-            [
-              -9.134343266487122,
-              38.716154984715956
-            ],
-            [
-              -9.134423732757568,
-              38.71626799607172
-            ],
-            [
-              -9.134600758552551,
-              38.71635170807188
-            ],
-            [
-              -9.13486361503601,
-              38.71643960556657
-            ],
-            [
-              -9.135105013847351,
-              38.71642704878823
+              -9.135807752609253,
+              38.72477681933164
             ]
           ]
         ]
@@ -99,260 +212,258 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {
-        "Title": "Installation 3",
-        "Artist Name": "Artist 3"
-      },
+      "properties": {},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -9.141601324081421,
-              38.719310864285816
+              -9.149508476257322,
+              38.7160377875657
             ],
             [
-              -9.141762256622314,
-              38.71916018885352
+              -9.14862871170044,
+              38.715644338584355
             ],
             [
-              -9.141815900802612,
-              38.71894254600157
+              -9.147738218307493,
+              38.71626381046914
             ],
             [
-              -9.141751527786255,
-              38.71868304788882
+              -9.149197340011597,
+              38.7170088438676
             ],
             [
-              -9.141418933868408,
-              38.7182979844367
+              -9.149508476257322,
+              38.7160377875657
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.137256145477293,
+              38.722968831471995
             ],
             [
-              -9.141204357147215,
-              38.71827287153078
+              -9.13686990737915,
+              38.72331201787029
             ],
             [
-              -9.141043424606323,
-              38.718415177880864
+              -9.137105941772461,
+              38.723420832725594
             ],
             [
-              -9.141000509262085,
-              38.718574225819175
+              -9.137524366378784,
+              38.72315298047601
             ],
             [
-              -9.141011238098145,
-              38.71873327340352
+              -9.137256145477293,
+              38.722968831471995
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.135547578334808,
+              38.71602104509996
             ],
             [
-              -9.141043424606323,
+              -9.135421514511108,
+              38.716286831280314
+            ],
+            [
+              -9.135359823703766,
+              38.716286831280314
+            ],
+            [
+              -9.135282039642334,
+              38.71647099750275
+            ],
+            [
+              -9.135217666625977,
+              38.71647099750275
+            ],
+            [
+              -9.135145246982574,
+              38.71663842092956
+            ],
+            [
+              -9.135386645793915,
+              38.71669911182493
+            ],
+            [
+              -9.135670959949493,
+              38.716173819954314
+            ],
+            [
+              -9.135638773441315,
+              38.71614661349731
+            ],
+            [
+              -9.135657548904419,
+              38.716071272485394
+            ],
+            [
+              -9.135547578334808,
+              38.71602104509996
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.141067564487457,
+              38.70566507873956
+            ],
+            [
+              -9.141016602516174,
+              38.70549553649503
+            ],
+            [
+              -9.140391647815704,
+              38.70563158894536
+            ],
+            [
+              -9.140445291996002,
+              38.7057906653282
+            ],
+            [
+              -9.141067564487457,
+              38.70566507873956
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.132252484560013,
+              38.715641199355055
+            ],
+            [
+              -9.132165312767029,
+              38.71557422909702
+            ],
+            [
+              -9.132121056318283,
+              38.71560876064415
+            ],
+            [
+              -9.132208228111267,
+              38.715684102143605
+            ],
+            [
+              -9.132252484560013,
+              38.715641199355055
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.138983488082884,
+              38.71332545697513
+            ],
+            [
+              -9.139401912689209,
+              38.71442212155242
+            ],
+            [
+              -9.13989543914795,
+              38.71432166442855
+            ],
+            [
+              -9.13936972618103,
+              38.71316639735691
+            ],
+            [
+              -9.138962030410767,
+              38.71329197076912
+            ],
+            [
+              -9.139015674591064,
+              38.713375686254714
+            ],
+            [
+              -9.138983488082884,
+              38.71332545697513
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.135550260543823,
+              38.71884209523098
+            ],
+            [
+              -9.13512647151947,
+              38.718854651585026
+            ],
+            [
+              -9.13511574268341,
+              38.719218784892696
+            ],
+            [
+              -9.135255217552185,
+              38.719181116015875
+            ],
+            [
+              -9.135276675224304,
               38.71887557883687
             ],
             [
-              -9.141150712966919,
-              38.71906810926627
+              -9.135550260543823,
+              38.718879764286505
             ],
             [
-              -9.141258001327515,
-              38.71922715575154
-            ],
-            [
-              -9.141558408737183,
-              38.7193024934368
-            ],
-            [
-              -9.141601324081421,
-              38.719310864285816
+              -9.135550260543823,
+              38.71884209523098
             ]
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 4",
-        "Artist Name": "Artist 4"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -9.145174026489258,
-              38.71761156183315
-            ],
-            [
-              -9.144916534423828,
-              38.7178292087383
-            ],
-            [
-              -9.144959449768066,
-              38.718113822921865
-            ],
-            [
-              -9.145281314849854,
-              38.718113822921865
-            ],
-            [
-              -9.145517349243164,
-              38.71799662898354
-            ],
-            [
-              -9.145581722259521,
-              38.71784595078045
-            ],
-            [
-              -9.145174026489258,
-              38.71761156183315
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 5",
-        "Artist Name": "Artist 5"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -9.134659767150879,
-              38.706217658079574
-            ],
-            [
-              -9.134316444396973,
-              38.70632649896131
-            ],
-            [
-              -9.13409113883972,
-              38.70642696732047
-            ],
-            [
-              -9.134176969528198,
-              38.706636275948654
-            ],
-            [
-              -9.134305715560913,
-              38.70675348851279
-            ],
-            [
-              -9.13439154624939,
-              38.70686232857885
-            ],
-            [
-              -9.134627580642698,
-              38.70682046703459
-            ],
-            [
-              -9.134724140167236,
-              38.70671162690479
-            ],
-            [
-              -9.134820699691772,
-              38.706510690845256
-            ],
-            [
-              -9.134734869003296,
-              38.7062092856972
-            ],
-            [
-              -9.134659767150879,
-              38.706217658079574
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "---"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -9.136075973510742,
-            38.70694605159386
-          ],
-          [
-            -9.136762619018553,
-            38.708151652139584
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 1",
-        "Artist Name": "Artist 1"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -9.136322736740112,
-          38.71583687771817
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 2",
-        "Artist Name": "Artist 2"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -9.134488105773926,
-          38.71619265518774
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 3",
-        "Artist Name": "Artist 3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -9.141247272491455,
-          38.71851562925151
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 4",
-        "Artist Name": "Artist 4"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -9.14536714553833,
-          38.717929660932505
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Title": "Installation 5",
-        "Artist Name": "Artist 5"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -9.134294986724854,
-          38.706560924913084
         ]
       }
     }
