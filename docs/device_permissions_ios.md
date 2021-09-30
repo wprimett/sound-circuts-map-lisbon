@@ -6,7 +6,7 @@
 
 2. Go to **Location** and select **Allow** or **Ask**
 
-   <img src="screenshots/safari_settings.gif" alt="safari_permissions_01" style="zoom:33%;" />
+   <img src="screenshots/safari_settings.gif" alt="safari_permissions_01" width=25% height=25% />
 
 ### Enable Location Services
 
@@ -16,11 +16,11 @@
 
 3. Go to **Safari** the applications list and allow location access
 
-   <img src="screenshots/location_services.gif" alt="safari_permissions_02" style="zoom: 33%;" />
+   <img src="screenshots/location_services.gif" alt="safari_permissions_02" width=25% height=25% />
 
    
 
 4. Refresh the browser window and try again, allow location when prompted
 
-   <img src="/Users/williamprimett/Documents/GitHub/sound-circuts-map-lisbon/docs/screenshots/Safari_popup.PNG" alt="Safari_location_popup" style="zoom:33%;" />
+   <img src="screenshots/Safari_popup.PNG" alt="Safari_location_popup" style="zoom:33%;" />
 
