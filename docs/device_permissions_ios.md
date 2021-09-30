@@ -6,7 +6,7 @@
 
 2. Go to **Location** and select **Allow** or **Ask**
 
-   <img src="screenshots/safari_settings.gif" alt="safari_permissions_01" width=25% height=25% />
+   <img src="screenshots/safari_settings.gif" alt="safari_permissions_01" width=128px height=227 />
 
 ### Enable Location Services
 
