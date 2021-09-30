@@ -22,5 +22,5 @@
 
 4. Refresh the browser window and try again, allow location when prompted
 
-   <img src="screenshots/Safari_popup.PNG" alt="Safari_location_popup" style="zoom:33%;" />
+   <img src="screenshots/Safari_popup.PNG" alt="Safari_location_popup" width=25% height=25% />
 
