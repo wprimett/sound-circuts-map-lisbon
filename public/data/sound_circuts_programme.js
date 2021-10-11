@@ -7,7 +7,8 @@ var sc_json = {
         "Artwork": "Antisocial Distancing Ensemble",
         "Artist Name": "William Phoenix Primett",
         "Website": "https://eufonia.io/william-phoenix-primett",
-        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632743993068-D5JGZZXD635Z3H1DEHM4/William+Phoenix+Primett1.JPG"
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632743993068-D5JGZZXD635Z3H1DEHM4/William+Phoenix+Primett1.JPG",
+        "artwork_id": 0
       },
       "geometry": {
         "type": "Point",
@@ -23,7 +24,8 @@ var sc_json = {
         "Artwork": "rain under the ceiling",
         "Artist Name": "Sofia Balbontin",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632744802819-DDIB3LAWGFKY8LG5I9UH/Sofia+Balbontin2+%281%29.jpg",
-        "Website": "https://eufonia.io/sofia-balbontin"
+        "Website": "https://eufonia.io/sofia-balbontin",
+        "artwork_id": 1
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +41,8 @@ var sc_json = {
         "Artwork": "Acousmatic Lisbon",
         "Artist Name": "Jaime Reis, Mariana Vieira and Marta Domingues",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632659278859-BGZ8W4VSM6VKER01WAG1/Jaime+Reis+by+Sofia+Nunes.jpeg",
-        "Website": "https://eufonia.io/jaime-reis-mariana-vieira-e-marta-domingues"
+        "Website": "https://eufonia.io/jaime-reis-mariana-vieira-e-marta-domingues",
+        "artwork_id": 2
       },
       "geometry": {
         "type": "Point",
@@ -55,7 +58,8 @@ var sc_json = {
         "Artwork": "sub sacellum",
         "Artist Name": "Júlia Lema Barros",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632741785686-SKHBFJWD95WUAM0LUQNS/julia+lema+barros+%282%29+%281%29.jpg",
-        "Website": "https://eufonia.io/julia-lema-barros"
+        "Website": "https://eufonia.io/julia-lema-barros",
+        "artwork_id": 3
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +75,8 @@ var sc_json = {
         "Artwork": "HearHere/EscuteAqui",
         "Artist Name": "Mark Waldron-Hyden",
         "Website": "https://eufonia.io/mark-waldronhyden",
-        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632742861778-SI935A0KY191KUQH1NIO/_Mark+Waldron-Hyden2.jpg?format=500w"
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632742861778-SI935A0KY191KUQH1NIO/_Mark+Waldron-Hyden2.jpg?format=500w",
+        "artwork_id": 4
       },
       "geometry": {
         "type": "Point",
@@ -87,7 +92,8 @@ var sc_json = {
         "Artwork": "Torção do espaço",
         "Artist Name": "Adriana Sá & John Klima",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632740584662-V9G3Y6ADS39I8UPUTS4I/adriana%26john1+%281%29.jpeg",
-        "Website": "https://eufonia.io/adrianasa-johnklima"
+        "Website": "https://eufonia.io/adrianasa-johnklima",
+        "artwork_id": 5
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +109,8 @@ var sc_json = {
         "Artwork": "Chen",
         "Artist Name": "Diogo Evangelista",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632745230257-FLZTH32OCBV0MQJPRNNS/Diogo+Evanglelista+%281%29.jpg",
-        "Website": "https://eufonia.io/diogo-evangelista"
+        "Website": "https://eufonia.io/diogo-evangelista",
+        "artwork_id": 6
       },
       "geometry": {
         "type": "Point",
@@ -119,7 +126,8 @@ var sc_json = {
         "Artwork": "Portal",
         "Artist Name": "Alysse Miserendino",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632745794416-65CXOOEGMI7R8XUYQHTA/Alyssa+Miserendino2.jpeg",
-        "Website": "https://eufonia.io/alyssa-miserendino"
+        "Website": "https://eufonia.io/alyssa-miserendino",
+        "artwork_id": 7
       },
       "geometry": {
         "type": "Point",
@@ -135,7 +143,8 @@ var sc_json = {
         "Artwork": "- undersound",
         "Artist Name": "Pedro Castanheira",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632746489198-W2W6WT4VA5VFIPXKW5T1/PedroCastanheira2+%281%29.jpeg",
-        "Website": "https://eufonia.io/pedro-castanheira"
+        "Website": "https://eufonia.io/pedro-castanheira",
+        "artwork_id": 8
       },
       "geometry": {
         "type": "Point",
@@ -148,8 +157,11 @@ var sc_json = {
     {
       "type": "Feature",
       "properties": {
-        "Artist Name": "",
-        "Picture": ""
+        "Artist Name": "William Phoenix Primett",
+        "Picture": "",
+        "Artwork": "Antisocial Distancing Ensemble",
+        "Website": "",
+        "artwork_id": 0
       },
       "geometry": {
         "type": "Polygon",
@@ -181,7 +193,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "rain under the ceiling",
+        "Artist Name": "Sofia Balbontin",
+        "artwork_id": 1
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -212,7 +228,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "sub sacellum",
+        "Artist Name": "Júlia Lema Barros",
+        "artwork_id": 3
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -243,7 +263,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "Torção do espaço",
+        "Artist Name": "Adriana Sá & John Klima",
+        "artwork_id": 5
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -274,7 +298,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "Chen",
+        "Artist Name": "Diogo Evangelista",
+        "artwork_id": 6
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -329,7 +357,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "- undersound",
+        "Artist Name": "Pedro Castanheira",
+        "artwork_id": 8
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -360,7 +392,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "Portal",
+        "Artist Name": "Alysse Miserendino",
+        "artwork_id": 7
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -391,7 +427,11 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "HearHere/EscuteAqui",
+        "Artist Name": "Mark Waldron-Hyden",
+        "artwork_id": 4
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -430,7 +470,12 @@ var sc_json = {
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "Artwork": "Acousmatic Lisbon",
+        "Artist Name": "Jaime Reis, Mariana Vieira and Marta Domingues",
+        "artwork_id": 2,
+        "Picture": ""
+      },
       "geometry": {
         "type": "Polygon",
         "coordinates": [

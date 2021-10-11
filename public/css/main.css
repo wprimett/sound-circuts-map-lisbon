@@ -59,11 +59,43 @@ p {
   padding-left: 2.5%;
 }
 
+.leaflet-popup-content-wrapper{
+  margin: 0px;
+  background-color: #FFFF00;
+  opacity: 0.75;
+  box-shadow: 3px 3px #aaa;
+}
+
+.leaflet-popup-tip-container{
+  opacity: 0.0;
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+  padding: 1px;
+  color: #1e1e1e;
+  opacity: 0.75;
+}
+
 .leaflet-popup-content-wrapper,.leaflet-popup-content
 {
+  color: #1e1e1e;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+  text-align: center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
    border-radius: 0 !important;
+}
+
+.leaflet-container a
+{
+  /* border-style: solid;
+  border-width: 1px;
+  border-spacing: 5px;
+  border-color: #1e1e1e; */
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
 }
 
 .navbar-default .navbar-brand {
@@ -98,4 +130,8 @@ ul.list li{
   background-color: #FFFF00;
   box-shadow: 3px 3px #aaa;
   opacity: 0.75;
+}
+
+#return-me:hover {
+    text-decoration: underline;
 }
