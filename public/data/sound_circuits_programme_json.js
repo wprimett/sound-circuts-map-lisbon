@@ -1,4 +1,4 @@
-var sc_json = {
+var sc_json_default = {
   "type": "FeatureCollection",
   "features": [
     {
@@ -8,7 +8,8 @@ var sc_json = {
         "Artist Name": "William Phoenix Primett",
         "Website": "https://eufonia.io/william-phoenix-primett",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632743993068-D5JGZZXD635Z3H1DEHM4/William+Phoenix+Primett1.JPG",
-        "artwork_id": 0
+        "artwork_id": 0,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
@@ -21,17 +22,18 @@ var sc_json = {
     {
       "type": "Feature",
       "properties": {
-        "Artwork": "rain under the ceiling",
-        "Artist Name": "Sofia Balbontin",
+        "Artwork": "reconciliação com a vida",
+        "Artist Name": "Atelier Francesco",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632744802819-DDIB3LAWGFKY8LG5I9UH/Sofia+Balbontin2+%281%29.jpg",
-        "Website": "https://eufonia.io/sofia-balbontin",
-        "artwork_id": 1
+        "Website": "https://eufonia.io/atelier-francesco",
+        "artwork_id": 1,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -9.135821203116866,
-          38.72491057601368
+          -9.135478729779873,
+          38.722166271183376
         ]
       }
     },
@@ -42,7 +44,8 @@ var sc_json = {
         "Artist Name": "Jaime Reis, Mariana Vieira and Marta Domingues",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632659278859-BGZ8W4VSM6VKER01WAG1/Jaime+Reis+by+Sofia+Nunes.jpeg",
         "Website": "https://eufonia.io/jaime-reis-mariana-vieira-e-marta-domingues",
-        "artwork_id": 2
+        "artwork_id": 2,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
@@ -59,7 +62,8 @@ var sc_json = {
         "Artist Name": "Júlia Lema Barros",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632741785686-SKHBFJWD95WUAM0LUQNS/julia+lema+barros+%282%29+%281%29.jpg",
         "Website": "https://eufonia.io/julia-lema-barros",
-        "artwork_id": 3
+        "artwork_id": 3,
+        "opening_info": "Friday closed // Sat - 14 - 20 // Sun 11 - 20"
       },
       "geometry": {
         "type": "Point",
@@ -76,7 +80,8 @@ var sc_json = {
         "Artist Name": "Mark Waldron-Hyden",
         "Website": "https://eufonia.io/mark-waldronhyden",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632742861778-SI935A0KY191KUQH1NIO/_Mark+Waldron-Hyden2.jpg?format=500w",
-        "artwork_id": 4
+        "artwork_id": 4,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
@@ -93,7 +98,8 @@ var sc_json = {
         "Artist Name": "Adriana Sá & John Klima",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632740584662-V9G3Y6ADS39I8UPUTS4I/adriana%26john1+%281%29.jpeg",
         "Website": "https://eufonia.io/adrianasa-johnklima",
-        "artwork_id": 5
+        "artwork_id": 5,
+        "opening_info": "Fri & Sat - 14 - 20 // Sun 12 - 20"
       },
       "geometry": {
         "type": "Point",
@@ -110,13 +116,14 @@ var sc_json = {
         "Artist Name": "Diogo Evangelista",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632745230257-FLZTH32OCBV0MQJPRNNS/Diogo+Evanglelista+%281%29.jpg",
         "Website": "https://eufonia.io/diogo-evangelista",
-        "artwork_id": 6
+        "artwork_id": 6,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -9.135399299362787,
-          38.71650644031564
+          -9.135223031044006,
+          38.71638519284453
         ]
       }
     },
@@ -127,7 +134,8 @@ var sc_json = {
         "Artist Name": "Alysse Miserendino",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632745794416-65CXOOEGMI7R8XUYQHTA/Alyssa+Miserendino2.jpeg",
         "Website": "https://eufonia.io/alyssa-miserendino",
-        "artwork_id": 7
+        "artwork_id": 7,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
@@ -144,7 +152,8 @@ var sc_json = {
         "Artist Name": "Pedro Castanheira",
         "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632746489198-W2W6WT4VA5VFIPXKW5T1/PedroCastanheira2+%281%29.jpeg",
         "Website": "https://eufonia.io/pedro-castanheira",
-        "artwork_id": 8
+        "artwork_id": 8,
+        "opening_info": "Fri - Sun 11h - 20h"
       },
       "geometry": {
         "type": "Point",
@@ -194,8 +203,8 @@ var sc_json = {
     {
       "type": "Feature",
       "properties": {
-        "Artwork": "rain under the ceiling",
-        "Artist Name": "Sofia Balbontin",
+        "Artwork": "reconciliação com a vida",
+        "Artist Name": "Atelier Francesco",
         "artwork_id": 1
       },
       "geometry": {
@@ -203,24 +212,32 @@ var sc_json = {
         "coordinates": [
           [
             [
-              -9.135807752609253,
-              38.72477681933164
+              -9.135560989379883,
+              38.72210667300498
             ],
             [
-              -9.135668277740479,
-              38.724810300156854
+              -9.135223031044006,
+              38.722081561437435
             ],
             [
-              -9.135764837265015,
-              38.72518695835981
+              -9.13514256477356,
+              38.722634013885276
             ],
             [
-              -9.135947227478027,
-              38.725178588199114
+              -9.135432243347168,
+              38.72266749571453
             ],
             [
-              -9.135807752609253,
-              38.72477681933164
+              -9.135448336601256,
+              38.722353602949305
+            ],
+            [
+              -9.135550260543823,
+              38.722353602949305
+            ],
+            [
+              -9.135560989379883,
+              38.72210667300498
             ]
           ]
         ]
@@ -308,48 +325,60 @@ var sc_json = {
         "coordinates": [
           [
             [
-              -9.135547578334808,
-              38.71602104509996
-            ],
-            [
-              -9.135421514511108,
-              38.716286831280314
-            ],
-            [
-              -9.135359823703766,
-              38.716286831280314
-            ],
-            [
-              -9.135282039642334,
-              38.71647099750275
-            ],
-            [
-              -9.135217666625977,
-              38.71647099750275
-            ],
-            [
-              -9.135145246982574,
-              38.71663842092956
+              -9.135681688785553,
+              38.716224047232394
             ],
             [
               -9.135386645793915,
-              38.71669911182493
+              38.71611312861294
             ],
             [
-              -9.135670959949493,
-              38.716173819954314
+              -9.135292768478394,
+              38.716259624866304
             ],
             [
-              -9.135638773441315,
-              38.71614661349731
+              -9.13501650094986,
+              38.71661121464937
             ],
             [
-              -9.135657548904419,
-              38.716071272485394
+              -9.134962856769562,
+              38.71671166855545
             ],
             [
-              -9.135547578334808,
-              38.71602104509996
+              -9.13495749235153,
+              38.71706744167064
+            ],
+            [
+              -9.134839475154877,
+              38.71760946907123
+            ],
+            [
+              -9.13490116596222,
+              38.7178898986225
+            ],
+            [
+              -9.134970903396606,
+              38.71787734209897
+            ],
+            [
+              -9.134903848171234,
+              38.7176241184034
+            ],
+            [
+              -9.13501113653183,
+              38.71708209111391
+            ],
+            [
+              -9.135037958621977,
+              38.71669701903628
+            ],
+            [
+              -9.135298132896423,
+              38.71682467903101
+            ],
+            [
+              -9.135681688785553,
+              38.716224047232394
             ]
           ]
         ]
@@ -402,24 +431,24 @@ var sc_json = {
         "coordinates": [
           [
             [
-              -9.132252484560013,
-              38.715641199355055
+              -9.13211703300476,
+              38.7154434276309
             ],
             [
-              -9.132165312767029,
-              38.71557422909702
+              -9.131923913955688,
+              38.71560248218229
             ],
             [
-              -9.132121056318283,
-              38.71560876064415
+              -9.13236379623413,
+              38.71597081767926
             ],
             [
-              -9.132208228111267,
-              38.715684102143605
+              -9.13264274597168,
+              38.71577827890626
             ],
             [
-              -9.132252484560013,
-              38.715641199355055
+              -9.13211703300476,
+              38.7154434276309
             ]
           ]
         ]
@@ -507,6 +536,66 @@ var sc_json = {
             [
               -9.135550260543823,
               38.71884209523098
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+
+var sc_json_soundwalks = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Artwork": "SOUND WALK",
+        "Artist Name": "ARTIST NAME",
+        "Website": "https://eufonia.io/william-phoenix-primett",
+        "Picture": "https://images.squarespace-cdn.com/content/v1/5d12470425ddfa000196b66d/1632743993068-D5JGZZXD635Z3H1DEHM4/William+Phoenix+Primett1.JPG",
+        "artwork_id": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.135275,
+          38.713273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Artist Name": "SOUND WALK",
+        "Picture": "",
+        "Artwork": "ARTIST NAME",
+        "Website": "",
+        "artwork_id": 0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.135410785675049,
+              38.71308268162621
+            ],
+            [
+              -9.135121107101439,
+              38.713099424780175
+            ],
+            [
+              -9.1351318359375,
+              38.713425915499016
+            ],
+            [
+              -9.135410785675049,
+              38.71341754396076
+            ],
+            [
+              -9.135410785675049,
+              38.71308268162621
             ]
           ]
         ]

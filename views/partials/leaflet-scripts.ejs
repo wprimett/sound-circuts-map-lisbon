@@ -6,15 +6,24 @@
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 
 <script src="js/L.Mask.js"></script>
-
 <script src="/js/leaflet.ajax.min.js"></script>
-
-<script src="/data/sound_circuts_programme.js"></script>
+<script src="/data/sound_circuits_programme_json.js"></script>
 
 <script>
 
   Polygons = []
   Points = []
+
+  var sc_json;
+  if (enable_soundwalks){
+    sc_json = sc_json_soundwalks;
+  }
+  else{
+    sc_json = sc_json_default;
+  }
+  if (invalid_access_code){
+    sc_json = {}
+  }
 
   for (i = 0; i < sc_json.features.length; i++){
     feature_json = sc_json["features"][i];
@@ -66,26 +75,39 @@
   map = generate_map(lat,lng,zoom);
 
   var yellowPinIcon = new L.Icon({
-    iconUrl: 'img/marker-icon-2x-gold-75.png',
+    // iconUrl: 'img/marker-icon-2x-gold-75.png',
+    iconUrl: 'img/eufonia_logo_marker.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
+    iconSize: [36, 36],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
   });
 
+  var locatorPinIcon = new L.Icon({
+    // iconUrl: 'img/marker-icon-2x-gold-75.png',
+    iconUrl: 'img/location_point.png',
+    // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [15, 15],
+    iconAnchor: [7.5, 7.5],
+    popupAnchor: [1, -34],
+    // shadowSize: [41, 41]
+  });
+
   function userUpdateLocation(user_lat, user_lng){
     console.log("updated");
-    zoom = 14;
+    zoom = zoom;
     map.remove();
     map = generate_map(user_lat, user_lng, zoom);
-    L.marker([user_lat, user_lng], {icon: yellowPinIcon}).addTo(map)
-    .bindPopup("You are here").openPopup();
+    L.marker([user_lat, user_lng], {icon: locatorPinIcon}).addTo(map)
+      .bindPopup("You are here", {className: "you-are-here"}).openPopup();
     ;
     updateView();
   }
 
   function userReturnToOrigin(){
+    const mapLink = document.querySelector('#map-link');
+    mapLink.innerHTML = `</br>`
     // console.log("updated");
     lng = -9.138307571411133;
     lat = 38.7134426585726;
@@ -117,7 +139,6 @@
   var latLngs = [];
   // var sc_areas = [];
   var mask_coordinates = [];
-  // var artwork_meta_data = [];
   var artwork_meta_data = [];
   var active_area_id = 0;
 
@@ -132,21 +153,20 @@
     var meta_data = {
     "Artwork": sc_json["features"][i].properties["Artwork"],
     "Artist": sc_json["features"][i].properties["Artist Name"],
-    "URL": sc_json["features"][i].properties["Website"]
+    "URL": sc_json["features"][i].properties["Website"],
+    "Opening": sc_json["features"][i].properties["opening_info"]
     }
     artwork_meta_data.push(meta_data);
   }
-  // console.log(mask_coordinates)
-  // console.log(artwork_meta_data)
 
   var coordinates = Polygons[0].geometry.coordinates[0];
-  for (i=0; i<coordinates.length; i++) {
-    latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
-  }
+  // for (i=0; i<coordinates.length; i++) {
+  //   latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
+  // }
 
 
   var mask = L.mask(latLngs)
-  mask.addTo(map);
+  // mask.addTo(map);
 
   var options = {
     style: function (feature) {
@@ -155,72 +175,35 @@
         "weight": 2,
         "opacity": 0.4,
         "fillColor": "yellow",
-        "fillOpacity": 0.75,
+        "fillOpacity": 0.75
       };
     }
   };
 
-  var coordinates = Polygons[0].geometry.coordinates[0];
-  var coordinates1 = Polygons[1].geometry.coordinates[0];
-  var coordinates2 = Polygons[2].geometry.coordinates[0];
-  var coordinates3 = Polygons[3].geometry.coordinates[0];
-  var coordinates4 = Polygons[4].geometry.coordinates[0];
-  var coordinates5 = Polygons[5].geometry.coordinates[0];
-  var coordinates6 = Polygons[6].geometry.coordinates[0];
-  var coordinates7 = Polygons[7].geometry.coordinates[0];
-
-  function updateMask(){
-    sc_areas = [];
-    for (i=0; i<Polygons.length; i++) {
-        var lpoly = new L.geoJson(Polygons[i], options);
-        // console.log(lpoly)
-        sc_areas.push(lpoly);
-        lpoly.addTo(map);
-      }
-    sc_areas[2].on('click', function(e) {
-      //open popup;
-      active_area_id = 0;
-      var popup = L.popup()
-      .setLatLng(e.latlng)
-      .setContent('Sound Circut')
-      .openOn(map);
-      map.removeLayer(mask)
-      var latLngs = []
-      // var coordinates = Polygons[2].geometry.coordinates[0];
-      for (i=0; i<coordinates2.length; i++) {
-        latLngs.push(new L.LatLng(coordinates2[i][1], coordinates2[i][0]));
-      }
-      mask = L.mask(latLngs)
-      mask.addTo(map);
-      updateMask();
-    });
-      sc_areas[1].on('click', function(e) {
-      //open popup;
-      active_area_id = 0;
-      var popup = L.popup()
-      .setLatLng(e.latlng)
-      .setContent('Sound Circut')
-      .openOn(map);
-      map.removeLayer(mask)
-      var latLngs = []
-      // var coordinates = Polygons[2].geometry.coordinates[0];
-      for (i=0; i<coordinates1.length; i++) {
-        latLngs.push(new L.LatLng(coordinates1[i][1], coordinates1[i][0]));
-      }
-      mask = L.mask(latLngs)
-      mask.addTo(map);
-      updateView();
-    });
-  }
+  // var coordinates = Polygons[0].geometry.coordinates[0];
+  // var coordinates1 = Polygons[1].geometry.coordinates[0];
+  // var coordinates2 = Polygons[2].geometry.coordinates[0];
+  // var coordinates3 = Polygons[3].geometry.coordinates[0];
+  // var coordinates4 = Polygons[4].geometry.coordinates[0];
+  // var coordinates5 = Polygons[5].geometry.coordinates[0];
+  // var coordinates6 = Polygons[6].geometry.coordinates[0];
+  // var coordinates7 = Polygons[7].geometry.coordinates[0];
+  // var coordinates8 = Polygons[8].geometry.coordinates[0];
 
 function showPopup(this_layer_poly, active_area_id){
   var artwork_title = artwork_meta_data[active_area_id]["Artwork"];
   var artist_name = artwork_meta_data[active_area_id]["Artist"];
-  var artist_url = artwork_meta_data[active_area_id]["URL"];;
+  var artist_url = artwork_meta_data[active_area_id]["URL"];
+  var opening_info = artwork_meta_data[active_area_id]["Opening"];
   var popup = L.popup()
    .setLatLng(this_layer_poly.latlng)
-   .setContent('<b>' + artwork_title + "</b><br>" + artist_name + '<br><a href="' + artist_url + '">More Info</a>')
+   .setContent('<b>' + artwork_title + "</b><br>" +
+                artist_name + "<br>" +
+                opening_info +
+                '<br><a target="_blank" rel="noopener noreferrer" href="' + artist_url + '">More Info</a>')
    .openOn(map);
+
+ return popup;
 }
 
 function addMask(old_mask, mask_coordinates){
@@ -234,158 +217,166 @@ function addMask(old_mask, mask_coordinates){
 }
 
 function updateView(){
-  layerpoly = new L.geoJson(Polygons[0],options)
-  layerpoly2 = new L.geoJson(Polygons[1],options)
-  layerpoly3 = new L.geoJson(Polygons[2],options)
-  layerpoly4 = new L.geoJson(Polygons[3],options)
-  layerpoly5 = new L.geoJson(Polygons[4],options)
-  layerpoly6 = new L.geoJson(Polygons[5],options)
-  layerpoly7 = new L.geoJson(Polygons[6],options)
-  layerpoly8 = new L.geoJson(Polygons[7],options)
-  layerpoly9 = new L.geoJson(Polygons[8],options)
-  layerpoly.addTo(map);
-  layerpoly2.addTo(map);
-  layerpoly3.addTo(map);
-  layerpoly4.addTo(map);
-  layerpoly5.addTo(map);
-  layerpoly6.addTo(map);
-  layerpoly7.addTo(map);
-  layerpoly8.addTo(map);
-  layerpoly9.addTo(map);
+  var all_layerpoly = [];
+  var all_coordinates = [];
 
+  // layerpoly = new L.geoJson(Polygons[0],options)
+  // layerpoly2 = new L.geoJson(Polygons[1],options)
+  // layerpoly3 = new L.geoJson(Polygons[2],options)
+  // layerpoly4 = new L.geoJson(Polygons[3],options)
+  // layerpoly5 = new L.geoJson(Polygons[4],options)
+  // layerpoly6 = new L.geoJson(Polygons[5],options)
+  // layerpoly7 = new L.geoJson(Polygons[6],options)
+  // layerpoly8 = new L.geoJson(Polygons[7],options)
+  // layerpoly9 = new L.geoJson(Polygons[8],options)
 
-  layerpoly.on('click', function(e) {
-  //open popup;
-  active_area = 0;
-  showPopup(e, active_area);
-  // var artwork_title = artwork_meta_data[active_area]["Artwork"];
-  // var artist_name = artwork_meta_data[active_area]["Artist"];
-  // var artist_url = artwork_meta_data[active_area]["URL"];;
-  // var popup = L.popup()
-  //  .setLatLng(e.latlng)
-  //  .setContent('<b>' + artwork_title + "</b><br>" + artist_name + '<br><a href="' + artist_url + '">More Info</a>')
-  //  .openOn(map);
-  // map.removeLayer(mask)
-  // latLngs = []
-  // for (i=0; i<coordinates.length; i++) {
-  //     latLngs.push(new L.LatLng(coordinates[i][1], coordinates[i][0]));
-  // }
-  // mask = L.mask(latLngs)
-  // mask.addTo(map);
-  addMask(mask, coordinates);
+  // all_layerpoly[0] = new L.geoJson(Polygons[0],options)
+  // all_layerpoly[1] = new L.geoJson(Polygons[1],options)
+  // all_layerpoly[2] = new L.geoJson(Polygons[2],options)
+  // all_layerpoly[3] = new L.geoJson(Polygons[3],options)
+  // all_layerpoly[4] = new L.geoJson(Polygons[4],options)
+  // all_layerpoly[5] = new L.geoJson(Polygons[5],options)
+  // all_layerpoly[6] = new L.geoJson(Polygons[6],options)
+  // all_layerpoly[7] = new L.geoJson(Polygons[7],options)
+  // all_layerpoly[8] = new L.geoJson(Polygons[8],options)
 
-  updateView();
-});
+  for (i=0; i<Polygons.length; i++) {
+    all_layerpoly[i] = new L.geoJson(Polygons[i],options)
+    all_layerpoly[i].addTo(map);
 
-layerpoly2.on('click', function(e) {
-  //open popup;
-  active_area = 1;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  addMask(mask, coordinates1);
-  updateView();
-});
-
-layerpoly3.on('click', function(e) {
-  //open popup;
-  active_area = 2;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates2.length; i++) {
-      latLngs.push(new L.LatLng(coordinates2[i][1], coordinates2[i][0]));
+    var new_coordinates = Polygons[i].geometry.coordinates[0];
+    all_coordinates.push(new_coordinates);
   }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
 
-layerpoly4.on('click', function(e) {
-  //open popup;
-  active_area = 3;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates3.length; i++) {
-      latLngs.push(new L.LatLng(coordinates3[i][1], coordinates3[i][0]));
+  // all_layerpoly[0].addTo(map);
+  // all_layerpoly.push(layerpoly);
+  // all_coordinates.push(coordinates);
+  // all_layerpoly[1].addTo(map);
+  // all_layerpoly.push(layerpoly2)
+  // all_coordinates.push(coordinates1);
+  // all_layerpoly[2].addTo(map);
+  // all_layerpoly.push(layerpoly3)
+  // all_coordinates.push(coordinates2);
+  // all_layerpoly[3].addTo(map);
+  // all_layerpoly.push(layerpoly4)
+  // all_coordinates.push(coordinates3);
+  // all_layerpoly[4].addTo(map);
+  // all_layerpoly.push(layerpoly5)
+  // all_coordinates.push(coordinates4);
+  // all_layerpoly[5].addTo(map);
+  // all_layerpoly.push(layerpoly6)
+  // all_coordinates.push(coordinates5);
+  // all_layerpoly[6].addTo(map);
+  // all_layerpoly.push(layerpoly7)
+  // all_coordinates.push(coordinates6);
+  // all_layerpoly[7].addTo(map);
+  // all_layerpoly.push(layerpoly8)
+  // all_coordinates.push(coordinates7);
+  // all_layerpoly[8].addTo(map);
+  // all_layerpoly.push(layerpoly9)
+  // all_coordinates.push(coordinates8);
+
+  var polygonClicked = function(active_area_id) {
+    return function areaClickedFunction(e) {
+        var focus_pnt = new L.LatLng(Points[active_area_id].geometry.coordinates[1], Points[active_area_id].geometry.coordinates[0]);
+        if (map.getZoom() < 14){
+          map.flyTo(focus_pnt, 15);
+        }else{
+          map.flyTo(focus_pnt, map.getZoom());
+        }
+        var new_marker = L.marker(focus_pnt, {icon: yellowPinIcon}).addTo(map);
+        //open popup;
+        var new_popup = showPopup(e, active_area_id);
+        addMask(mask, all_coordinates[active_area_id]);
+        new_popup.on('remove', function() {
+          map.removeLayer(mask)
+          map.removeLayer(new_marker)
+        });
+        updateView();
+    }
   }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
 
-layerpoly5.on('click', function(e) {
-  //open popup;
-  active_area = 4;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates4.length; i++) {
-      latLngs.push(new L.LatLng(coordinates4[i][1], coordinates4[i][0]));
+  for (i=0; i<all_layerpoly.length; i++) {
+    selected_poly = all_layerpoly[i];
+    active_area_id = i
+    selected_poly.addEventListener('click', polygonClicked(active_area_id));
   }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
 
-layerpoly6.on('click', function(e) {
-  //open popup;
-  active_area = 5;
-  showPopup(e, active_area);
-
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates5.length; i++) {
-      latLngs.push(new L.LatLng(coordinates5[i][1], coordinates5[i][0]));
-  }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
-
-layerpoly7.on('click', function(e) {
-  //open popup;
-  active_area = 6;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates6.length; i++) {
-      latLngs.push(new L.LatLng(coordinates6[i][1], coordinates6[i][0]));
-  }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
-
-layerpoly8.on('click', function(e) {
-  //open popup;
-  active_area = 7;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates7.length; i++) {
-      latLngs.push(new L.LatLng(coordinates7[i][1], coordinates7[i][0]));
-  }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
-
-layerpoly9.on('click', function(e) {
-  //open popup;
-  active_area = 8;
-  showPopup(e, active_area);
-  map.removeLayer(mask)
-  latLngs = []
-  for (i=0; i<coordinates8.length; i++) {
-      latLngs.push(new L.LatLng(coordinates8[i][1], coordinates8[i][0]));
-  }
-  mask = L.mask(latLngs)
-  mask.addTo(map);
-  updateView();
-});
+//   layerpoly.on('click', function(e) {
+//   //open popup;
+//   active_area = 0;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates);
+//   updateView();
+// });
+//
+// layerpoly2.on('click', function(e) {
+//   //open popup;
+//   active_area = 1;
+//   showPopup(e, active_area);
+//   map.removeLayer(mask)
+//   addMask(mask, coordinates1);
+//   updateView();
+// });
+//
+// layerpoly3.on('click', function(e) {
+//   //open popup;
+//   active_area = 2;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates2);
+//   updateView();
+// });
+//
+// layerpoly4.on('click', function(e) {
+//   //open popup;
+//   active_area = 3;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates3);
+//   updateView();
+// });
+//
+// layerpoly5.on('click', function(e) {
+//   //open popup;
+//   active_area = 4;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates4);
+//   updateView();
+// });
+//
+// layerpoly6.on('click', function(e) {
+//   //open popup;
+//   active_area = 5;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates5);
+//   updateView();
+// });
+//
+// layerpoly7.on('click', function(e) {
+//   //open popup;
+//   active_area = 6;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates6);
+//   updateView();
+// });
+//
+// layerpoly8.on('click', function(e) {
+//   //open popup;
+//   active_area = 7;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates7);
+//   updateView();
+// });
+//
+// layerpoly9.on('click', function(e) {
+//   //open popup;
+//   active_area = 8;
+//   showPopup(e, active_area);
+//   addMask(mask, coordinates7);
+//   updateView();
+// }
+// );
 }
 
 updateView();
-  // updateMask();
+
 </script>

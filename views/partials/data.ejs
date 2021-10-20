@@ -1,53 +1,57 @@
-<button type="button" id = "find-me" style="width: auto;">Update my location</button>
-<button type="button" id = "return-me" style="width: auto; background: #FFF; color:#0000AA; padding-top:10px; visibility: hidden ">Reset</button>
+<button type="button" id = "find-me" style="width: auto; visibility=visible" >Update my location</button>
+<button type="button" id = "return-me" style="width: auto; background: #FFF; color:#0000AA; padding-top:10px; visibility: hidden ">Reset Position</button>
 <p id = "status"</p>
-<p id = "map-link"</p>
+  <p id = "map-link"</p>
 
-<script language="JavaScript">
+    <script language="JavaScript">
 
-  // Manual Geolocation tracking enabled
+      if (invalid_access_code){
+        document.querySelector('#find-me').style.visibility = "hidden";
+      }
 
-  function geoFindMe() {
-  const status = document.querySelector('#status');
-  const mapLink = document.querySelector('#map-link');
-  const returnLink = document.querySelector('#return-me');
+      // Manual Geolocation tracking enabled
 
-  mapLink.href = '';
-  mapLink.textContent = '';
+      function geoFindMe() {
+        const status = document.querySelector('#status');
+        const mapLink = document.querySelector('#map-link');
+        const returnLink = document.querySelector('#return-me');
 
-  function success(position) {
-    const latitude  = position.coords.latitude;
-    const longitude = position.coords.longitude;
+        mapLink.href = '';
+        mapLink.textContent = '';
 
-    userUpdateLocation(latitude, longitude);
+        function success(position) {
+          const latitude  = position.coords.latitude;
+          const longitude = position.coords.longitude;
 
-    status.textContent = '';
-    mapLink.innerHTML = `Latitude: ${latitude} °, Longitude: ${longitude} ° </br>`
+          userUpdateLocation(latitude, longitude);
 
-    returnLink.style.visibility = "visible";
-    // mapLink.innerHTML += `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>${latitude}, ${longitude}</a>`;
-  }
+          status.textContent = '';
+          mapLink.innerHTML = `Current Position </br> ${latitude},${longitude}</br>`
 
-  function error() {
-    // status.textContent = `Unable to retrieve your location,`;
-    status.innerHTML = 'Unable to retrieve your location </br>'
-    status.innerHTML += `please review your `;
-    status.innerHTML += `<a href='https://eufonia.io/instuructions-map-1#block-b7e1872cc9401d88956f'>device permissions</a>`;
-    // status.innerHTML += `<a href='https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DAndroid'>device permissions</a>`;
-  }
+          returnLink.style.visibility = "visible";
+          // mapLink.innerHTML += `<a href='https://www.openstreetmap.org/#map=18/${latitude}/${longitude}'>${latitude}, ${longitude}</a>`;
+        }
 
-  if(!navigator.geolocation) {
-    status.textContent = 'Geolocation is not supported by your browser';
-  } else {
-    status.textContent = 'Locating…';
-    navigator.geolocation.getCurrentPosition(success, error);
-  }
-}
+        function error() {
+          // status.textContent = `Unable to retrieve your location,`;
+          status.innerHTML = 'Unable to retrieve your location </br>'
+          status.innerHTML += `please review your `;
+          status.innerHTML += `<a target="_blank" rel="noopener noreferrer" href='https://eufonia.io/instuructions-map-1#block-b7e1872cc9401d88956f'>device permissions</a>`;
+          // status.innerHTML += `<a href='https://support.google.com/chrome/answer/142065?hl=en&co=GENIE.Platform%3DAndroid'>device permissions</a>`;
+        }
 
-document.querySelector('#find-me').addEventListener('click', geoFindMe);
-document.querySelector('#return-me').addEventListener('click', userReturnToOrigin);
+        if(!navigator.geolocation) {
+          status.textContent = 'Geolocation is not supported by your browser';
+        } else {
+          status.textContent = 'Locating…';
+          navigator.geolocation.getCurrentPosition(success, error);
+        }
+      }
 
-</script>
+      document.querySelector('#find-me').addEventListener('click', geoFindMe);
+      document.querySelector('#return-me').addEventListener('click', userReturnToOrigin);
+
+    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

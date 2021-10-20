@@ -31,6 +31,8 @@
     <% include partials/footer %>
   </footer>
 
+  <% include partials/info %>
+
   <script>
   // global variables
   var lng = -9.138307571411133;
@@ -38,9 +40,28 @@
   var zoom = 14;
   var map = null;
   var live_location_bool = false;
+  var enable_soundwalks = false;
+  var invalid_access_code = false;
+
+  const queryString = window.location.search;
+  // console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const user_access_code = urlParams.get('sound-walks-access-code')
+
+  if (user_access_code === url_passphrase){
+    // console.log("enable")
+    const title_text = document.querySelector('#title-bar');
+    title_text.textContent += ' [Soundwalks]';
+    enable_soundwalks = true;
+  }else{
+    if (user_access_code != null){
+      invalid_access_code = true;
+      document.querySelector('#error-log').style.visibility = "visible";
+      console.log("access code not recognized");
+    }
+  }
   </script>
 
-  <% include partials/info %>
   <% include partials/leaflet-scripts %>
   <% include partials/data %>
 

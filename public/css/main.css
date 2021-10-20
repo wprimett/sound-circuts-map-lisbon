@@ -61,6 +61,7 @@ p {
 
 .leaflet-popup-content-wrapper{
   margin: 0px;
+  margin-bottom: 50px;
   background-color: #FFFF00;
   opacity: 0.75;
   box-shadow: 3px 3px #aaa;
@@ -134,4 +135,8 @@ ul.list li{
 
 #return-me:hover {
     text-decoration: underline;
+}
+
+#error-log{
+  font-weight: bolder;
 }
